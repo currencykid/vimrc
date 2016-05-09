@@ -3,7 +3,6 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>q :wq<CR>
 nnoremap <Leader>qq :q<CR>
-set t_Co=256
 
 set hlsearch
 set number
@@ -11,11 +10,14 @@ set autoindent
 set ts=4
 set scrolloff=5
 set wildmode=list:longest,full
-syntax on
+syntax enable
 set wildmenu
 set incsearch
 set mouse=a
 set cursorline
+
+
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -50,5 +52,10 @@ map <Leader>nt :NERDTree %:p:h<CR>
 :imap ii <Esc>
 
 
+set t_Co=256
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let g:solarized_termcolors=256
+"  set background=light
+colorscheme molokai
 
  
