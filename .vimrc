@@ -1,27 +1,39 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" :set autoindent
+:set cindent
+:set number
+
+set scrolloff=5
+set wildmenu
+set wildmode=longest,list
+
+
 let mapleader=" "
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>q :wq<CR>
 nnoremap <Leader>qq :q<CR>
 
-set hlsearch
-set number
-set autoindent
-set ts=4
-set scrolloff=5
-set wildmode=list:longest,full
-syntax enable
-set wildmenu
-set incsearch
-set mouse=a
-set cursorline
 
-
-
-set rtp+=~/.vim/bundle/Vundle.vim
+set splitbelow
+set splitright
+:set incsearch
+:set hlsearch
+" set the runtime path to include Vundle and initialize
+set rtp+=/home/ck/.vim/bundle/Vundle.vim
 call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
+" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'isRuslan/vim-es6'
 
 Plugin 'vim-airline/vim-airline'
 
@@ -38,24 +50,3 @@ Plugin 'tomasr/molokai'
 Plugin 'ninja/sky' 
 
 Plugin 'mattn/emmet-vim'
-
-Plugin 'nathanaelkane/vim-indent-guides' 
-
-call vundle#end()           
-filetype plugin indent on    
-
-cd ~/
-map <F2> :NERDTreeToggle<CR>
-" open Nerd Tree in folder of file in active buffer
-map <Leader>nt :NERDTree %:p:h<CR>
-
-:imap ii <Esc>
-
-
-set t_Co=256
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-let g:solarized_termcolors=256
-"  set background=light
-colorscheme molokai
-
- 
