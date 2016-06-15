@@ -57,6 +57,7 @@ Plugin 'wincent/command-t'
 
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'crusoexia/vim-monokai' 
 " Plugin 'ctrlpvim/ctrlp.vim' 
 
 " All of your Plugins must be added before the following line
@@ -68,8 +69,8 @@ syntax on
 set t_Co=256
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let g:solarized_termcolors=256
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme monokai
 " Recommended: continuous vertical split line.
 set fillchars=vert:\│
 
