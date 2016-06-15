@@ -5,7 +5,7 @@ filetype off                  " required
 :set cindent
 :set number
 
-set scrolloff=5
+:set scrolloff=10
 set wildmenu
 set wildmode=longest,list
 
@@ -50,3 +50,65 @@ Plugin 'tomasr/molokai'
 Plugin 'ninja/sky' 
 
 Plugin 'mattn/emmet-vim'
+
+Plugin 'nathanaelkane/vim-indent-guides' 
+
+Plugin 'wincent/command-t'
+
+Plugin 'vim-airline/vim-airline-themes'
+
+" Plugin 'ctrlpvim/ctrlp.vim' 
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+syntax on
+set t_Co=256
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let g:solarized_termcolors=256
+set background=light
+colorscheme solarized
+" Recommended: continuous vertical split line.
+set fillchars=vert:\│
+
+" Recommended: Set airline theme to sky.
+let g:airline_theme='dark'
+
+" Recommended: remove powerline separaters (text can't be transparent).
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline#extensions#tabline#left_sep=''
+let g:airline#extensions#tabline#left_alt_sep=''
+
+
+cd ~/
+map <F2> :NERDTreeToggle<CR>
+" open Nerd Tree in folder of file in active buffer
+map <Leader>nt :NERDTree %:p:h<CR>
+
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set backspace=2
+" size of a hard tabstop
+" set tabstop=4
+"
+""size of an indent"
+" set shiftwidth=4
+"
+" " a combination of spaces and tabs are used to simulate tab stops at a width
+" " other than the (hard)tabstop
+" set softtabstop=4
+:imap ii <Esc>
+
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+:set formatoptions-=cro
+set noswapfile
+au BufNewFile,BufRead *.ejs set filetype=html
+
