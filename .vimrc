@@ -57,6 +57,8 @@ Plugin 'wincent/command-t'
 
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'mxw/vim-jsx'
+
 Plugin 'crusoexia/vim-monokai' 
 " Plugin 'ctrlpvim/ctrlp.vim' 
 
