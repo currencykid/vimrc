@@ -1,3 +1,4 @@
+set rtp+=~/.fzf
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -5,16 +6,32 @@ filetype off                  " required
 :set cindent
 :set number
 
-:set scrolloff=10
 set wildmenu
 set wildmode=longest,list
-
+:set mouse=a
 
 let mapleader=" "
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>o :CtrlP<CR> 
 nnoremap <Leader>q :wq<CR>
 nnoremap <Leader>qq :q<CR>
+nnoremap <Leader>f :FZF<CR>
+nnoremap <Leader>sd :split<CR>
+
+" Avoids updating the screen before commands are completed
+set lazyredraw
+
+" Remap navigation commands to center view on cursor using zz
+nnoremap <C-U> 11kzz
+nnoremap <C-D> 11jzz
+nnoremap j jzz
+nnoremap k kzz
+nnoremap # #zz
+nnoremap * *zz
+nnoremap n nzz
+nnoremap N Nzz
+
+set pastetoggle=<F2>
 
 
 set splitbelow
@@ -23,6 +40,7 @@ set splitright
 :set hlsearch
 " set the runtime path to include Vundle and initialize
 set rtp+=/home/ck/.vim/bundle/Vundle.vim
+
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -35,13 +53,13 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'isRuslan/vim-es6'
 
+Plugin 'NLKNguyen/papercolor-theme'
+
 Plugin 'vim-airline/vim-airline'
 
 Plugin 'pangloss/vim-javascript'
 
 Plugin 'scrooloose/nerdtree'
-
-Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'zhaocai/GoldenView.Vim'
 
@@ -60,19 +78,43 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mxw/vim-jsx'
 
 Plugin 'crusoexia/vim-monokai' 
+
+Plugin 'slashmili/alchemist.vim'
+
+Plugin 'git://github.com/jiangmiao/auto-pairs.git'
+
+Plugin 'tpope/vim-ragtag'
+
+Plugin 'Yggdroot/indentLine'
+
+Plugin 'othree/yajs.vim'
+
+Plugin 'slim-template/vim-slim.git'
+
+Plugin 'encody/nvim'
+
+Plugin 'elzr/vim-json'
+
+Plugin 'fatih/vim-go'
+
+Plugin 'elixir-lang/vim-elixir'
+
+
 " Plugin 'ctrlpvim/ctrlp.vim' 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+syntax enable
 filetype plugin indent on    " required
+autocmd BufNewFile,BufRead *.slim set ft=slim
 
-
-syntax on
-set t_Co=256
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-let g:solarized_termcolors=256
 set background=dark
-colorscheme monokai
+colorscheme PaperColor
+set t_Co=256
+let g:molokai_original = 1
+
+
 " Recommended: continuous vertical split line.
 set fillchars=vert:\│
 
@@ -114,4 +156,5 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 :set formatoptions-=cro
 set noswapfile
 au BufNewFile,BufRead *.ejs set filetype=html
-
+set conceallevel=0
+let g:vim_json_syntax_conceal = 0
